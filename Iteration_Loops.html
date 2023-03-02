@@ -1,0 +1,77 @@
+
+<html>
+<head>
+    <title>LOOPs</title>
+</head>
+<body>
+    <script>
+        console.log("Iteration statements or Loops:- while, do-while, for ")
+    
+        /*
+         Necessary steps for running the loop:-
+
+            1. Initialization of the variable 
+
+            2. Condition to be satisfied
+
+            3.  Updation of variable.
+               P.S:- If the condition is true and there is no updation then the loop executed is called Infinity Loop.
+
+        */
+
+        var r = 0;      // INITIALIZATION
+       
+        while ( r < 5)       // CONDITION
+        {
+          console.log(`${r+1} Round is Completed `) ;
+
+          r++ ;               // UPDATION
+        }
+
+        
+        var r = 5 ;
+
+        while (r > 0)
+        { 
+            console.log(`${r} While Loop is running `) ;
+            r-- ;
+        }
+
+        var r = 1;
+
+        while (r < 2)
+        {
+            console.log("OK") ;
+            r++ ;  // updation provided after the loop ran infinity times
+        }
+
+        var r = 0 ;
+
+        do {
+            console.log(`${r} The do while loop is working`) ;
+
+            r++ ;
+        }
+        while(r < 4  &  r > 0 )
+        /* Here the loop runs befor checking the condition once hence an extra iteration. Using do-while loop should be planned really well
+           I used the AND Operator here so as to clarify the confusion in running of do-while loop
+        The best and most used type of loops is for loop :-
+        */ 
+
+        for (var r = 1 ; r <= 5 ; r++ )
+        {
+            console.log(`${r} For loop is Running `) ;
+        }
+
+        // for loop can be written this way as well:-
+
+        var r = 1
+        for ( ; r < 3 ; )
+        {
+            console.log(`${r} For loop altered here`) ;
+            
+            r++ ;
+        }
+    </script> 
+</body>
+</html>
