@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <title>Func</title>
+</head>
+<body>
+    <script>
+                // let was introduced in ES-6.
+                function fun ()
+                {
+                    x = 10 ;
+                    console.log (x) ;                   // Here x became a Global variable and it can be accessed everywhere
+                                                        // Even Outside the function.
+                } 
+
+                fun () ;
+                console.log (x) ;
+
+                if (true)
+                {
+                    var y = 20 ;
+                    console.log (y) ;
+                }
+
+                console.log (y) ;                         // Here we saw how the variable can be accessed outside the function as well
+                                                          // This can crete confusions
+
+                if (true)
+                {
+                    let y = 22 ;
+                    console.log (y) ;
+                }
+               
+                console.log (y) ;                           // Here we saw by using the keyword 'let' we defined the scope of the variable 
+                                                            // By using curly braces that define the scope
+                                                            // Let cleared the errors that could have possibly risen.
+
+    </script>
+</body>
+</html>

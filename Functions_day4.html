@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <title>Func</title>
+</head>
+<body>
+    <script>
+        
+        // 4. Immediate Function Expression (I.I.F.E) :-
+
+        var add = function (n1 , n2)
+        {
+            var result = n1 + n2 ;
+            console.log (result) ;
+        }
+       
+        // add (100 , 50) ;
+        // Now Other Way To Pass Arguemnets is  :-
+          (200 , 100) ;                           
+            /* 
+             This Function Is Also Called Self Invoking Function 
+             Here, The Function Is Called Without Mentioning The Name Of The Function 
+             Or The VAriable It Is Stored In.
+             Also, For S.I.F To Work The Function Expression Should Be Present.
+             */
+
+        // 5. Closure Function :-
+
+        var add = function summ (n1 , n2)               // This is an Outer Function 
+        {
+            var result = n1 + n2 ;
+
+            function calc ()                            // This is an Inner Function 
+        
+            {  
+             console.log (` This is an Inner Function `) ;
+            }
+        }
+
+        /* 
+          'Scope of a Variable' is defined as the area where a Variable can be accessed
+             Variables when classified on the basis of scope are:-
+
+               1. Local Variable - A variable that is written in a function.
+               2. Global Variable - A variable that is written in the Program Outside the function
+                                     but can be accessed in the function as well.
+        */
+
+                                                                                    // Stack Frame / Function.
+                    
+        // Important - Recursion :-  Is An IMportant memory concept
+       
+        function add ()
+        {
+            add () ;                // Stack Overflow exception
+        }
+    
+    </script>
+</body>
+</html>

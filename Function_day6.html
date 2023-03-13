@@ -1,0 +1,67 @@
+<html>
+<head>
+    <title>Func</title>
+</head>
+<body>
+    <script>
+        // Function Hoisting
+
+        fun();                                                     // Prototyping Function Declaration
+                                                                 // Function expression is never hoisted and we have to call it later
+        function fun ()
+        {
+            console.log (" I am a Function ");
+        }
+        
+        // Variable Hoisting
+
+        console.log (x);
+        var x = 10 ;
+
+        var add = function fun () 
+        { 
+            var x = 11 ;
+
+            console.log (x) ;
+        }
+
+         add () ;
+
+        
+         // Example :-
+         { 
+            x = 90 ;                                                // Here what happens is variable hoisting takes place :-
+           console.log (x) ;                                        // Declared variable gets hoisted behind the scenes automatically.
+                                                                           // { var x ;
+               var x ;                                                      //   x = 90 ;
+        }                                                                   //  console.log (x);}
+                                                                             
+            //Example :-
+
+           function fun ()
+           {
+            console.log (y);
+           }  
+           
+           var y ;
+            y = 100 ;
+
+            fun () ;                                                // Function is in sleeping mode until it is called.
+
+            // Issues that could possibly arise by Variable Hoisting :-
+
+            function funn ()
+            {
+                var y = 90 ;
+                console.log (`This is from inside the function = ${y}`) ;
+            }
+            
+
+            var y ;
+            y = 100 ;                                   // THis could create confusions . Hence the keyword 'let'.
+
+            funn () ;
+    </script>
+    
+</body>
+</html>
