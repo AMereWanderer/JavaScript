@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        // Elements grouped in a continuos manner where index starts at 0 is called an Array.
+        // Entry and Exit Points are called Nodes.
+        // Arrays follow Big Of 1 pattern.
+        // The time complexity gets reduced to 1 when using arrays.
+        // Base Address + Size of type * Index .
+        
+        let items = [ 10 , 20 , 30 ]                    // Here The actual syntax is:-    let items = new Array [10 , 20 , 30] ;
+        console.log (items) ;                           // Length of an array = Capacity of the group.
+        console.log (items.length) ;                    // Length = Total Elements.
+
+        let hotelTaj = [] ;
+        
+        hotelTaj [0] = 11 ;
+        hotelTaj [1] = 22 ;
+        hotelTaj [2] = 33 ;
+        hotelTaj [3] = 44 ;
+        hotelTaj [4] = 55 ;                                 // Index = Length - 1 .
+
+        let peopleInfo = [ "Afnan" , 26 , "Male" , "Amir" , 30 , "Male" , "Fatima" , 19 , "Female"] ;
+        console.log (peopleInfo) ;                                  
+                                                    // This shows that Array made in Java script is always 'Heterogeneous'.
+
+     let hotelTaaj = [] ;
+    
+     for(let i = 0 ; i < 5 ; i++ )                                      // Here we created a loop to store the values given 
+     {                                                                  // by the user in the form of Array
+        hotelTaaj[i] = parseInt ( prompt ("Enter Value") ) ;            
+        console.log ( hotelTaaj [i] ) ;
+     }
+
+    
+
+
+   </script>
+</body>
+</html>

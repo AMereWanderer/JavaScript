@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <title>Func</title>
+</head>
+<body>
+    <script>
+        // Call - Back function
+
+        function add ()
+        {
+            let x = 21 ;
+            let y = 23 ;
+            let res = x + y ;
+
+            console.log (`Sum of  two no's is:- ${res} `)
+        }
+        function fun ()
+        {
+        let x = parseInt (prompt(`Enter First Number = `)) ;
+        let y = parseInt (prompt(`Enter Second Number = `)) ;           // Always Internal code gets executed first.
+
+        add (x , y) ;                                           
+        }
+
+        fun (add) ;                     // We give function as an  arguement here
+                                         // Every function has an address called Stack Frame
+
+
+        // Fucntion Pointers or Indirect calling:-
+        // Here Function is passed as an arguement or given as a parameter 
+        // This is called Call Back Function
+        
+        // Calling A Function :-
+        console.log (add());
+
+        // Passing A Function (As An Argument):-
+        console.log (add) ;
+
+        fun (add) ;
+    </script>
+</body>
+</html>

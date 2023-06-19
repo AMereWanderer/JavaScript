@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Func</title>
+  </head>
+  <body>
+    <script>
+      let empCodes = [1, 5, 3, 8, 11, 12, 20, 22, 91, 44, 53];
+
+      function predicate(num) {                                           // There is a simplified way to write this :-
+        if (num == 20) {                                                  // fuction predicate (num) {return num === 20}
+            return true ;                                                 // or
+        }                                                                 // num => num === 20
+        else {
+            return false
+        } ;
+        return ;
+      }
+
+      let codeFind = empCodes.find(predicate) ;                           // Here we can use simply
+      console.log(codeFind);                                              // let codeFind = empcodes.find(num => num === 20) ;
+
+      //similarly for string value :-
+
+      let countries = [
+        "Kashmir",
+        "Pakistan",
+        "HejazMuqaddas",
+        "Ottoman Sulatanate",
+        "Falastin",
+      ];
+
+      let countryFind = countries.find(country => country === "Falastin" );
+      console.log(countryFind) ;
+
+      // now find index is another function to use where needed
+
+      let countryIndex = countries.findIndex(country => country === "Pakistan" ) ;
+      console.log(countryIndex) ;
+
+      let codeIndex = empCodes.find( code => code === 20 ) ;
+      console.log(codeIndex) ;
+      
+      
+    </script> 
+  </body>
+</html>

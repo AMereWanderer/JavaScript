@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style> 
+        input {
+            width: 500px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="number" value="" id="fstno" placeholder="Enter First Number:-"/>
+    </div>
+
+    <div>
+        <input type="number" id="scndno" placeholder="Enter Second Number:-"/>
+    </div>
+
+    <div>
+        <input type="number" id="res" placeholder="The result is:-"/>
+    </div>
+
+    <div>
+        <button onclick="sum()">Add</button>
+        <button onclick="subt()">Subtract</button>
+     
+        <button onclick="divide()">Divide</button>
+        <button onclick="multiply()">Multiply</button>
+        <button onclick="modulus()">Modulus</button>
+    </div>
+
+    <script>
+        function sum() {
+            var firstNumber = document.getElementById("fstno").value;
+            
+            
+            var secondNumber = document.getElementById("scndno").value;
+            var result = document.getElementById("res");
+
+            var res = parseInt(firstNumber) + parseInt(secondNumber);
+            result.value = res;
+
+            console.log(res);
+        }
+
+        function subt() {
+            var firstNumber = document.getElementById("fstno").value;
+            var secondNumber = document.getElementById("scndno").value;
+            var result = document.getElementById("res");
+
+            var res = parseInt(firstNumber) - parseInt(secondNumber);
+            result.value = res;
+
+            console.log(res);
+        }
+
+        function divide() {
+            var firstNumber = document.getElementById("fstno").value;
+           
+            var secondNumber = document.getElementById("scndno").value;
+            var result = document.getElementById("res");
+
+            var res = parseInt(firstNumber) / parseInt(secondNumber);
+            result.value = res;
+
+            console.log(res);
+        }
+
+        function multiply() {
+            var firstNumber = document.getElementById("fstno").value;
+           
+            var secondNumber = document.getElementById("scndno").value;
+           
+            var result = document.getElementById("res");
+
+            var res = parseInt(firstNumber) * parseInt(secondNumber);
+            result.value = res;
+
+            console.log(res);
+        }
+
+        function modulus() {
+            var firstNumber = document.getElementById("fstno").value;
+            var secondNumber = document.getElementById("scndno").value;
+            var result = document.getElementById("res");
+
+            var res = parseInt(firstNumber) % parseInt(secondNumber);
+            result.value = res;
+
+            console.log(res);
+        }
+    </script>
+</body>
+</html>

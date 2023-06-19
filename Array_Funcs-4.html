@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Func</title>
+</head>
+<body>
+    <script>
+       
+        let salaries =[10000 , 20000 , 30000 , 40000 , 50000] ;
+        let reducedSalaries = salaries .reduce( (preVal , currVal) => preVal + currVal) ;
+
+        //console.log (`Previous/Initial value ${preVal}`) ;
+        console.log ( reducedSalaries ) ;
+
+        // We can use any operator to get the determined result
+
+        let evenNumbers = [ 2, 4, 6, 8, 10] ;
+
+        let reducedEvenNumbers = evenNumbers .reduce ( (preVal , currVal) => preVal * currVal ) ;
+        console.log ( reducedEvenNumbers ) ;
+    
+        // Another example of .reduce() function :-
+        
+        const numbers = [1, 2, 3, 4, 5];
+
+        const sum = numbers .reduce( (accumulator, currentValue) => accumulator + currentValue );
+
+        console.log(sum);
+
+        /*
+         In this example, the .reduce() function is used to calculate the sum of all elements in the numbers array. 
+         The callback function takes the accumulator and currentValue as parameters,
+         adds them together, and returns the updated value of the accumulator.
+         The initial value of the accumulator is set to 0.
+
+         During each iteration, the accumulator is updated with the sum of the previous elements,
+         and the currentValue represents the current element being processed.
+         The final result is the accumulated sum of all the numbers in the array.
+
+         We can use .reduce() to perform various operations on arrays, such as finding the maximum 
+         or minimum value, concatenating strings, or generating new data structures.
+        */
+
+    </script>
+</body>
+</html>

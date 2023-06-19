@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+
+          let employee= {
+            id : 100 ,                                      
+            name : "Shaan" ,
+            salary : 25000 ,
+
+            // setemployee : function(id , name ,salary){
+            //     id = id ;                       Here the function parameters are directly assigned to the local variables
+            //     name = name ;                   which doesn't update the props as intended hence we use this. keyword 
+            //     salary = salary ;               that technically refers to the current object i-e. 'employee'.
+            // } ,
+          
+            setemployee : function(id , name ,salary){
+                this.id = id ;
+                this.name = name ;
+                this.salary = salary ;
+            } ,
+            getCurrent : function(){
+                return this ;
+            }
+        }
+
+        employee.setemployee(101 , "UsmanGazi" , 90000) ;
+        
+        let emp = employee.getCurrent() ;
+        console.log(emp) ;
+
+        let isActive = true ;                   // Adding a Prop to an object-employee dynamically :-
+        
+        if(isActive) {
+            employee.gender = "Male" ;
+
+            employee.userName = "shaan_231" ;
+
+            employee.success = function(){
+                console.log("Through Failures Comes Success") ;
+            };
+        } ;
+
+         console.log(emp) ;
+
+         // Removing a Prop from an object-employee dynamically :-
+                    delete employee.salary ;
+                    console.log(emp) ;
+
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>Func</title>
+</head>
+<body>
+    <script>
+        //6. Arrow Function or Fat Arrow Function</p>  // {Denoted by:  -> or => } 
+    
+            //  ES-6 is upgraded almost every year that gave the concept of Arrow Function.
+
+            var summ = function (x , y)
+            {
+                var result = x + y ;
+                return result ;
+            }
+
+            var res = summ (100 , 200)
+            console.log (`The sum of 2 no's =  ${res} `) ;
+           
+            // The Above Code can be re-written in a simplified way as :-
+           
+            var summ = (x, y) => { 
+                                    var result = x + y ;
+                                    return result   
+                                 }
+
+                              
+            // The Above Code can be re-written in a more simplified way as :-
+
+            var summ = (x , y) => x + y ;                     // There is no need for curly braces in single line code
+                                                              // -> or => is read as ' Such That' .
+                (100 , 50) ;
+
+
+            var square = (x) => x * x ;
+            
+            var sq = square (5) ;
+             console.log(sq);                                       // This is called 'Calling a Function' .
+    </script>
+
+</body>
+</html>

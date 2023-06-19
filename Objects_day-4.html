@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Objects</title>
+  </head>
+  <body>
+    <script>
+      let employee = {};
+      // Here what happens is JS engine adds another object to the employee object named as object
+      console.log(employee);
+
+      // What is [[Prototype]]: Object?
+      // Prototype is a base class for all the objects, and it helps us to achieve the inheritance.
+
+      console.log(employee.hasOwnProperty);
+
+      console.log(employee.hasOwnProperty("name"));
+      // Here it returns false as it checks whether there is a property 'name' in the employee object
+
+      let stdnt = {
+        name: "khan",
+      };
+
+      // Just like Adam Alaihis Salatu Wassalaam is called The Father Of All Humans.
+      // The Object is the father of all objects.
+
+      const std1 = {
+        rollNo: 101,
+        name: "Usman",
+        marks: 459,
+        showDetails() {
+          console.log(`
+          Roll No.:- ${this.rollNo}
+          Name:- ${this.name}
+          Marks:- ${this.marks}
+          `);
+        },
+      };
+
+      const std2 = {
+        rollNo: 102,
+        name: "Khan",
+        marks: 479,
+        showDetails() {
+          console.log(`
+          Roll No.:- ${this.rollNo}
+          Name:- ${this.name}
+          Marks:- ${this.marks}
+          `);
+        },
+      };
+
+      const std3 = {
+        rollNo: 103,
+        name: "John",
+        marks: 439,
+        showDetails() {
+          console.log(`
+          Roll No.:- ${this.rollNo}
+          Name:- ${this.name}
+          Marks:- ${this.marks}
+          `);
+        },
+      };
+
+      console.log(std1);
+      console.log(std2);
+      console.log(std3);
+
+      function Student(rollNo, name, marks) {
+        this.rollNo = rollNo;
+        this.name = name;
+        this.marks = marks;
+
+        // this.showDetails = function () {
+        //   console.log(`
+        //   Roll No.:- ${this.rollNo}
+        //   Name:- ${this.name}
+        //   Marks:- ${this.marks}
+        // `);
+        // };
+
+        this.returnObj = function () {
+          return this;
+        };
+      }
+
+      const std4 = new Student(301, "Harry", 467);
+      console.log(std4);
+
+      const obj = std4.returnObj(); // This is how we return an object with paramaeters given by user.
+      console.log(obj);
+
+      /*
+      Here we saw how the showDetails function is repeatedly occuring
+      behind the execution of the code.
+      We reached to the solution of such an issue where repeate doccurence
+      takes a huge memory space unnecessarily:-
+      */
+
+      Student.prototype.showDetails = function () {
+
+        console.log(
+         `
+          Roll No.:- ${this.rollNo}
+          Name:- ${this.name}
+          Marks:- ${this.marks}
+         ` )
+        } ;
+    </script>
+  </body>
+</html>

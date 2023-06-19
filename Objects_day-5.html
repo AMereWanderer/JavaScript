@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>objects</title>
+  </head>
+  <body>
+    <script>
+       // New Way for Protoype function:-
+       // CLass/ Blueprint.
+
+       /* class Employee {
+               Three types of functions are present inside class:-
+               1. Constructor function.
+               2. Prototype function.
+               3. Static function.
+       }   */
+
+       /*
+       const e1 = new Employee( - Here internally Constructor gets called ) ;
+
+       Default constructor or zero argument constructor.
+       */
+
+       /*
+       class Employee {
+         // The name of the constructor is the same as that of the class
+         constructor() {
+           //  Zero Argument constructor.
+           this.id = 101;
+           this.name = "Waseem";
+           this.salary = 30000;
+         }
+       }
+       */
+
+       class Employee {
+
+         constructor(id, name, salary) {
+           // Parameterised Constructor.
+
+           this.id = id;
+           this.name = name;
+           this.salary = salary;
+        }
+            /*
+            Now, we have the showDetails() function which we solved its repeated occurence yesterday
+             Here using class the showDetails() function goes directly in the prototype function.
+             Also, the prototype function is called so because it goes directly into the object.
+            */
+          
+          showDetails() {
+           console.log(`
+              Id:- ${this.id}
+              Name:- ${this.name}
+              Salary:- ${this.salary}
+              `);
+          }
+        } ;
+
+       const e1 = new Employee(111, "Hazim", 45000) ;
+       console.log(e1) ;
+
+      e1.showDetails() ;
+    </script>
+  </body>
+</html>

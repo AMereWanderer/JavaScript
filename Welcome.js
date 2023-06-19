@@ -1,0 +1,1 @@
+alert(" Welcome TO Java Script Practice");

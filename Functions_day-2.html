@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>Func</title>
+</head>
+<body>
+    <script>
+
+        function sub ()               
+        {
+            var x = 50 ;
+            var y = 100 ;
+            var diff = y - x ;
+            
+            return diff ;
+        }
+       
+
+       function add (a , b)                        // The variables used in the paranthesis are called 'Parameters'.
+       {
+       var summ = a + b ;
+       return summ;
+       }
+
+
+      var result = sub () ;
+      console.log (`The difference between 2 No's = ${result}`) ;
+  
+  
+      var res = add ( 200,300 ) ;                             // The values in the paranthesis are called 'Arguements'.
+      console.log (`The sum of 200 and 300 = ${res} `);
+
+       /*
+        Concatenation is an old concept and gets complicated when writing long code
+        ES-6 gave a new concept called 'String Interpolation'
+        String made between back ticks and variables in $ and curly braces{}
+        e.g. (`STRING string STRING ${Variable} STRING ${Variable} STRING string `) 
+       */
+ 
+    </script>   
+</body>
+</html>

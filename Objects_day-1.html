@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Objects</title>
+</head>
+<body>
+       <script>
+        // let array = new Array(); is the actual syntax to make an array or this way:
+        
+        let numbers = [] ;
+
+        // let object = new Object(); is the actual syntax to make an array or this way:
+
+        let myObject = {} ;         // Curly Braces simply mean an object.
+
+        // Here employee is called a reference variable:
+        let employee= {
+            id : 100 ,                                      // Whatever belongs to curly braces is called a 'member'.
+            name : "Shaan" ,
+            salary : 25000 ,
+            languages : ['c' , 'c++' , 'JavaScript' , 'Python'] ,        // Array within An Object As its Prop / Member
+
+            address : {                                    // Object within an object acting as its props also having its own props.       
+                country : 'India' ,
+                State : 'J&K' ,
+                City : 'Sirinagar' ,
+                Street : 'HaiderPora' ,
+                Pin : 190014
+            } ,
+
+            showDetails : function(){
+                console.log(" 'showDetails' Function invoked ") ;
+               
+                /*console.log(`
+                Id:- ${id}                              It doesn't work as it can't be accessed without dot operator
+                Name:- ${name}                          Now we can use employee.id and emplopyee.others similarly but
+                Salary:- ${salary}                      a better way is to use- 'this.'
+                LAnguages Known:- ${languages}          It allows access to other properties and methods within the object.
+                Address:- ${address}                    this. carries exactly the address as that of the reference variable.
+                `)*/
+
+                console.log(`
+                Id:- ${this.id}
+                Name:- ${this.name}
+                Salary:- ${this.salary}
+                LAnguages Known:- ${this.languages}
+                Address:- ${this.address}
+                `)
+            }
+        } ;
+        // We also call members as properties or simply props.
+
+        //Accesing a member with the help of 'Dot(.) Operator':
+
+        console.log (employee.id) ;
+        console.log (employee.name) ;
+        console.log (employee.salary) ;
+        
+        console.log (employee.languages) ;
+
+        console.log (employee.languages [2] ) ;                         // Array like Syntax.
+
+        console.log( employee.address ) ;             
+
+        console.log( employee.address['Street']) ;                   // Accessing the prop of the object within an object.
+
+        console.log( employee ['address'] ['Pin'] );    
+
+        console.log (employee.address.City ) ;                        
+
+        employee.showDetails() ;
+
+       </script>     
+</body>
+</html>

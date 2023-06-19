@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Arrays</title>
+</head>
+<body>
+    <script>
+        var numbers = [ 10 , 20 , 30 , 40 , 50 ] ;
+        console.log(numbers.length) ;
+
+        var i = 0 ;
+
+        while ( i==numbers.length )
+        {
+            console.log ( numbers[i] );
+            i++ ;
+        }
+        console.log (numbers) ;
+        /*
+         NOW, we will use 
+         'For-of' and 'For-In' loops 
+         as all other loops are for rookies
+         and we have reached some level beyond that
+        */
+
+        for (var index in numbers)
+        {
+            console.log ( `For-In Loop Used  ${ numbers[index] }` ) ;
+        }
+
+        for (var item of numbers)
+        {
+            console.log ( `For-Of Loop Used ${item}` ) ;
+        }
+
+        /* 
+         Procedures for addition of elements to arrays :-
+         1. Push or Append.                       (Adds element on the top of the array meaning to last/end index)
+         2. Unshift or Prepend.                   (Adds element at the bottom of an array meaning at the fisrt/start index)
+         3. Splice.                               
+         */
+
+         //1.Push :-
+         
+         numbers.push (60) ;
+         console.log (numbers) ;
+
+         // 2. Unshift :-
+
+         numbers.unshift (70) ;
+         console.log (numbers) ;
+
+         // 3. Splice :-
+         numbers.splice (0 , 3 , 111 , 98 ) ;
+         console.log (numbers) ;
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+  </head>
+  <body>
+    <input type="text" id="txt" />
+    <button onclick="add()">Push</button>
+    <button onclick="prepend()">Unshift</button>
+    <button onclick="insert()">Splice-Insert</button>
+    <button onclick="remove()">Splice-Remove</button>
+    <ol id="list"></ol>
+    <script>
+      /* 
+     Splice example :-
+       
+       var fruits = ["Banana", "Orange", "Apple", "Mango"];
+       
+       // At index 2, remove 1 element , add 2 elements: 
+       
+       fruits.splice(2, 1, "Lemon", "Kiwi");
+    */
+
+      var txtbox = document.getElementById("txt");
+
+      var myOList = document.getElementById("list");
+
+      var names = [];
+
+      function add() {
+        names.push(txtbox.value);
+        myOList.innerHTML = "";
+
+        for (var item of names) {
+          myOList.innerHTML += `<li>${item}</li>`;
+        }
+
+        txtBox.value = "";
+      }
+
+      function prepend() {
+        names.unshift(txtbox.value);
+        myOList.innerHTML = "";
+
+        for (var item of names) {
+          myOList.innerHTML += `<li>${item}</li>`;
+        }
+
+        txtbox.value = "";
+      }
+
+      function insert() {
+        names.splice(2,0,txtbox.value);
+        myOList.innerHTML = "";
+
+        for (var item of names) {
+          myOList.innerHTML += `<li>${item}</li>`;
+        }
+
+        txtbox.value = "";
+      }
+
+      function remove() {
+        names.splice(0,2);
+        myOList.innerHTML = "";
+
+        for (var item of names) {
+          myOList.innerHTML += `<li>${item}</li>`;
+        }
+
+        txtbox.value = "";
+      }
+    </script>
+  </body>
+</html>

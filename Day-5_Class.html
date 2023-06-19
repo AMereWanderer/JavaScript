@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Strings</title>
+  </head>
+  <body>
+    <script>
+      var str = "Whatever 'Allah' wishes for us is always best";
+
+      str = 'Whatever "Allah" wishes for us is always best';
+
+      str = 'Whatever "Allah" wishes for us is always best';
+
+      var totalLength = str.length;
+      console.log(
+        `The total characters or elements in the string array are :- ${totalLength}`
+      );
+
+      var res = str.concat(". So Keep Praying...");
+      console.log(res);
+
+      //Also
+
+      var str1 = ". ALLAH 'HU' AKBAR";
+
+      var con = str.concat(str1);
+      console.log(con);
+
+      // Now
+
+      var str2 = "samiSir@logicHubss.com";
+        console.log (`The Whole E-mail string is here ${str2} `) ;
+
+      // Substring :-                                   
+        // here it is 'method' calling by   string.substring (startIndex , endIndex)
+       // It changes the arguments if  sI  is greater than  eI
+
+      var stPart = str2.substring (0, 4);
+      console.log(`here substring is used ${stPart}`);
+
+      stPart = str2.substring (4, 0);
+      console.log(`here substr is used with sI > eI ${stPart}`);
+
+      // Substr :-                                      // Old way
+
+      var strPart = str2.substr(0, 4);
+      console.log(`here substr is used ${strPart}`) ;
+
+      // Slice :-                                          
+       // Here it does the same work as substring but we can give -ive values as well
+       // which will mean taking from the end of the string .
+       // Slice doesnt swap the values like substring .
+
+      var stgPart = str2 . slice(0, 4);
+      console . log (`Here slice is used ${stgPart}`) ;
+
+      var negPart = str2 . slice(-4) ;                         
+      console .log (`${negPart}`) ;
+
+      // Index of and Last Index of :-
+
+        var ind = str2 . indexOf ("@") ;
+        console.log (ind) ;
+
+        var lastIndex = str2 . lastIndexOf ("@") ;
+        console . log (lastIndex) ;
+
+        var url = "https:// logichubss.com/home.php" ;
+        var dotIndex = lastIndexOf (".") ;
+        console .log (dotIndex) ;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Func</title>
+  </head>
+  <body>
+    <script>
+      let countries = [
+        "Kashmir",
+        "Pakistan",
+        "HejazMuqaddas",
+        "Ottoman Sulatanate",
+        "Falastin",
+      ];
+
+      let sortedCountries = countries.sort();
+      console.log(sortedCountries);
+
+      console.log(countries); // For this to work you have to comment the reverse code below
+      // Also the sort and reverse func's dont return an array rather they manipulate the original array
+
+      let reverseSorted = sortedCountries.reverse();
+      console.log(reverseSorted);
+
+      console.log(countries);
+
+      let empCodes = [1, 5, 3, 8, 11, 12, 22, 91, 44, 53];
+      empCodes.sort();
+      console.log(empCodes);
+
+      /* Now the sort function will be assisted by comparer function that works by
+         swapping the elements after assigning two adjacent values as shown below :-
+         a,b in a - b
+         if a < b or a = b the answer will be negative or zero hence no swapping of the elements will take place
+         Otherwise the swap will take place and the elements will be sorted
+
+      */
+
+      // Predicate means a function which returns bool value
+
+      function comparer(a, b) {
+        // Here (1 , 5) - no swap (5 , 3) - swap . Similarly the rest will follow.
+        return a - b;
+      }
+
+      // Reverse of the comparer function :-
+
+      function revComparer(a, b) {
+        return b - a;
+      }
+    </script>
+  </body>
+</html>

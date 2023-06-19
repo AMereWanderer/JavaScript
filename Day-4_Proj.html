@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Registration Form Print</title>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="fstNam" placeholder="Enter First Name" /><br />
+
+      <input type="text" id="midNam" placeholder="Enter Middle Name" /><br />
+
+      <input type="text" id="lstNam" placeholder="Enter Last Name" /><br />
+
+      <input type="email" id="mail" placeholder="Enter Your E-mail" /><br />
+
+      <input
+        type="number"
+        id="num"
+        placeholder="Enter Your Mobile Number" /><br />
+
+      <button onclick="printDetails()">Print User Details</button>
+    </div>
+
+    <div id="detailsDiv">The details will be printed here:-</div>
+
+    <script>
+      function printDetails() {
+        var firstName = document.getElementById("fstNam").value;
+
+        var middleName = document.getElementById("midNam").value;
+
+        var lastName = document.getElementById("lstNam").value;
+
+        var email = document.getElementById("mail").value;
+
+        var mobileNumber = document.getElementById("num").value;
+
+        var details =
+         `
+          Name:- ${firstName} ${middleName} ${lastName} <br>
+          Email:- ${email}<br/>
+          Mobile Number:- ${mobileNumber}
+        `;
+
+        var detailsDiv = document.getElementById("detailsDiv");
+
+        detailsDiv.innerHTML = details;
+      }
+    </script>
+  </body>
+</html>

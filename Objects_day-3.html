@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        let employee = {
+            id : 212 ,
+            name: "Sultan" ,
+            salary: 110000
+        } ;
+        // Suppose we've to change salary to baseSalary in each employee when there are thousands of 'em
+        // here we will take the help of templates 
+        // Templates / Blue-Prints / Constructor FUnction / Classes .
+        // Written in Pascal Case:
+
+        // function Emp() {
+        //     this.id = 101 ;
+        //     this.name = "Alam" ;
+        //     this.salary = 30000 ;
+        // }
+
+        // let e1 =  new Emp(102 , "khan" , 32000) ;             This didn't work because we only initialized the values
+        // console.log(e1) ;                                        but didnt give parameters for the updation of those props.
+
+        function Employee(id , name , salary , email = "hello@companyDomain.com" ) {        // Constructor Function:
+            this.id = id ;                         // Here we wont give values to the props but just initialize them.
+            this.name = name ;
+            this.salary = salary ;
+            this.email = email ;
+            this.showDetails = function(){
+               console.log(
+
+                `   Id ${this.id}
+                    Name ${this.name}
+                    Salary ${this.salary}
+                    Email ${this.email}    `)
+            }
+        }
+
+        let emp1 = new Employee(201 , "Shah" , 32000) ;
+
+        console.log(emp1) ;
+        console.log(emp1.id) ;
+        console.log(emp1.name) ;
+        console.log(emp1.email) ;
+
+        let emp2 = new Employee(202 , "Beigh" , 34000 , "beigh@realDomain.com") ;
+
+        console.log(emp2) ;
+        console.log(emp2.id) ;
+        console.log(emp2.salary) ;
+        console.log(emp2.email) ;
+
+        emp1.showDetails() ;
+        
+        
+        
+    </script>
+</body>
+</html>

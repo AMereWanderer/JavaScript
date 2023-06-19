@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Name Extraction</title>
+    <style>
+      body {
+        background-color: rgb(5, 220, 73);
+      }
+      table {
+        background-color: gold;
+        border: 3px solid black;
+        font-size: larger;
+      }
+      td,
+      th {
+        border: 1px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <label for="url">Enter URL</label><br />
+      <input type="text" id="url" placeholder="Enter The URL" /><br /><br />
+      <label for="mail">Enter E-Mail</label><br />
+      <input type="text" id="mail" placeholder="Enter The E-mail Address" />
+      <br /><br />
+      <button onclick="extract()">DISPLAY</button>
+    </div>
+    <div id="contentDisplay"></div>
+    <script>
+      function extract() {
+        var url = document.getElementById("url").value;
+
+        var urlIndex = url.indexOf(".");
+
+        var urlLastIndex = url.lastIndexOf(".");
+
+        var hostName = url.substring(0, urlIndex);
+
+        var secLevelDomain = url.substring(urlIndex + 1, urlLastIndex);
+
+        var topLevelDomain = url.substring(urlLastIndex + 1);
+
+        var mail = document.getElementById("mail").value;
+
+        var mailIndex = mail.indexOf("@");
+
+        var mailLastIndex = mail.lastIndexOf("@");
+
+        var localPart = mail.substring(0, mailIndex);
+
+        var emailDomain = mail.substring(mailLastIndex + 1);
+
+        var displayContent = `
+        </br></br>
+        <table>
+      <tr>
+        <th>URL</th>
+        <th>Top-level domain</th>
+        <th>Second-level domain</th>
+        <th>Hostname</th>
+      </tr>
+      <tr>
+        <td>${url}</td>
+        <td>${topLevelDomain}</td>
+        <td>${secLevelDomain}</td>
+        <td>${hostName}</td>
+      </tr>
+      <tr>
+        <th>E-Mail</th>
+        <th>Local Part</th>
+        <th>Domain Name</th>
+      </tr>
+      <tr>
+        <td>${mail}</td>
+        <td>${localPart}</td>
+        <td>${emailDomain}</td>
+      </tr>
+    </table>
+        `;
+
+        document.getElementById("contentDisplay").innerHTML = displayContent;
+      }
+    </script>
+  </body>
+</html>

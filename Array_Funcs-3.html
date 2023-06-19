@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Func</title>
+</head>
+<body>
+    <script>
+        let salaries =[10000 , 20000 , 30000 , 40000 , 50000] ;
+
+        let returnedSalary = salaries.filter (salary => salary >= 25000) ;                 // Here we used .filter function to check the 
+        console.log (returnedSalary) ;                                                    // no. of employees getting salaries above 25k .
+       
+        // The array returned here shows no . of employees and their salaries .
+
+        let isExist = salaries.some (salary => salary >= 25000) ;
+        console.log (isExist) ;
+
+        if(isExist){
+            console.log ("Yes it is there !") ;
+        }                                                                       // Here The curly braces are optional
+        else{
+            console.log ("No it is not there !") ;
+        }
+        console.log (isExist) ;
+
+
+        // Another .some() exapmle:-
+
+        const numbers = [1, 2, 3, 4, 5] ;
+
+        const hasEvenNumber = numbers.some ( number => number % 2 === 0 );
+        console.log(hasEvenNumber);
+
+        if (hasEvenNumber) console.log ("Yes, an even number found !") ;
+
+        else console.log ("No, it doesn't have any even number !") ;
+        
+        /*
+        In this example, the .some() function is used to check if the array contains 'at least' one even number.
+         The callback function checks whether each element is divisible by 2 (number % 2 === 0), 
+         and as soon as it finds an even number (2), it returns true.
+         Since the condition is satisfied, the .some() function stops iterating and returns true.
+        If none of the elements satisfy the condition, .some() will return false.
+        */
+
+        // .every() function is the exactly opposite of .some() function.
+        
+        let empSalaries =[10000 , 20000 , 30000 , 40000 , 50000] ;
+            
+        let isAvailable = empSalaries .every(salary => salary === 10000);
+            
+        if(isAvailable) console.log ("Yes! All are there") ;
+        else console.log ("Maybe! Someone is missing") ;
+        
+        console.log (isAvailable) ;
+            
+        // Another .every() example :-
+            
+        const unNumbers = [2, 4, 6, 8, 10] ;
+            
+        const allEvenNumbers = unNumbers .every( number => number % 2 === 0) ;
+            
+        console.log(allEvenNumbers) ;
+       
+        /*
+            In this example, the .every() function is used to check if 'all elements' in this array are even numbers.
+            The callback function checks whether each element is divisible by 2 (number % 2 === 0),
+            and if any element fails the test, it returns false.
+            However, if all elements pass the test, .every() returns true.
+            
+            If any of the elements fail the condition, .every() will return false.        
+        */
+            
+
+
+</script>                                                                                   
+</body>
+</html>
