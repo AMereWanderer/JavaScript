@@ -9,8 +9,14 @@
       // Here what happens is JS engine adds another object to the employee object named as object
       console.log(employee);
 
-      // What is [[Prototype]]: Object?
-      // Prototype is a base class for all the objects, and it helps us to achieve the inheritance.
+      /*
+       What is [[Prototype]]: Object?
+        Prototype is a base class for all the objects, and it helps us to achieve the inheritance.
+        Every object in JavaScript has a built-in property, which is called its prototype.
+        The prototype is itself an object, so the prototype will have its own prototype,
+        making what's called a prototype chain. The chain ends when we 
+        reach a prototype that has null for its own prototype.
+      */
 
       console.log(employee.hasOwnProperty);
 
@@ -99,14 +105,19 @@
       */
 
       Student.prototype.showDetails = function () {
+        // This Prototype will contain the showDetails function only.
 
         console.log(
-         `
+          `
           Roll No.:- ${this.rollNo}
           Name:- ${this.name}
           Marks:- ${this.marks}
-         ` )
-        } ;
+         `
+        );
+      };
+      /*
+       When you try to access a property or method on an object, JavaScript checks if the object itself has that property or method. If it doesn't, it looks up the prototype chain until it finds the property or method or reaches the end of the chain (where the prototype is null).
+      */
     </script>
   </body>
 </html>

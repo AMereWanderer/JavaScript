@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Objects</title>
+  </head>
+  <body>
+    <script>
+      //Some examples to understand this whole concept properly:-
+
+      class Person {
+        // Constructor function
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+
+        // Static function
+        static sayHello(person) {
+          console.log(`Hello from ${person.name}`);
+        }
+
+        // Prototype method
+        greet() {
+          console.log(`Heyy, my name is ${this.name}`);
+        }
+      }
+
+      // Creating instances:
+      const john = new Person("John", 21);
+      const mary = new Person("Mary", 23);
+
+      // Accessing instance properties:
+      console.log(john.name);
+      console.log(mary.age);
+
+      // Accessing static function:
+      Person.sayHello(john);
+      Person.sayHello(mary);
+
+      // Accessing prototype method:
+      john.greet();
+      mary.greet();
+    </script>
+  </body>
+</html>

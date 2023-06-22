@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DOM</title>
+  </head>
+  <body style="background-color: rgb(184, 237, 100)">
+    <div>
+      <h1 id="heading">"Welcome To The JavaScript World"</h1>
+    </div>
+    <input
+      type="text"
+      name="username"
+      id="username"
+      value=""
+      style="color: mediumblue"
+    />
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur,
+      facilis.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, a
+      perspiciatis ut nesciunt non quae?
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur.</p>
+    <script>
+      console.log(document);
+
+      console.dir(document); //.dir shows the entire structure of the object.
+      console.dir(window);
+
+      console.dir(window.document);
+
+      // Every Prop of window is global hence we can call it directly.
+      // Now, document.getElementById("heading");
+
+      let heading = document.getElementById("heading");
+      //Thus <h1> becomes a node in the document tree.
+
+      console.dir(heading);
+
+      let text = heading.innerText;
+      console.log(text);
+
+      heading.innerText = "A Quick Brown Fox Jumps Over The Lazy Dog.";
+
+      heading.innerHTML = `<b> Where There Is A Will</b> ,<i> There Is A Way <i>`;
+
+      // Now, The Text Written In Text Box goes In Value Attribute
+      // Of Input Tag And Will Be Retrieved Through .value
+
+      let userNameTxtBox = document.getElementById("username");
+      console.log(userNameTxtBox);
+      console.dir(userNameTxtBox);
+
+      userNameTxtBox.value = "WELCOME TO KASHMIR";
+
+      let userName1 = userNameTxtBox.value;
+      userName1.value = "EXPLOIT OUR HUMILITY";
+
+      /*
+        When we Assign the value of userNameTxtBox.value to userName1, it
+        creates a separate copy of the value in userName1. Any changes made to
+        'userName1' will not affect the original 'userNameTxtBox.value'. So, when
+        we try to update 'userName1.value', it won't have any effect on the input
+        element because userName1 is not an HTML input element, but a regular
+        variable holding the value. To update the value of the input element,
+        we should directly modify the value prop of the userNameTxtBox
+        element itself.
+        Like this:-
+      */
+
+      userNameTxtBox.value = "EXPLOIT OUR HUMILITY";
+
+      //Now, we will access the multiple paragraphs with dom method
+      // which will return an HTML Collection i-e. an Array.
+
+      let paragraphs = document.getElementsByTagName("p");
+      console.log(paragraphs);
+
+      paragraphs[1].innerText = "Where There Is A Will , There Is A Way";
+      paragraphs[2].innerHTML = `A <b>Quick Brown Fox</b> Jumps Over <i>The Lazy Dog<i>.`;
+       
+       
+        // Suppose i have to change the style of p tags with the help 
+        // of Dom method, What should i do here ?
+    </script>
+  </body>
+</html>

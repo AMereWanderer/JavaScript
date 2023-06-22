@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>STACK / HEAP</title>
+  </head>
+  <body>
+    <script src="Stack_Heap-1.js"></script>
+    <div>
+      <ol>
+        <h2>Data Types:-</h2>
+        <li>Value Types / Primitive Types</li>
+        <li>Reference Type</li>
+      </ol>
+      <ul>
+        <li>
+          <h3>Value Types / Primitive Types:-</h3>
+        </li>
+        <li>
+          <b>number:-</b>
+          Represents numeric values, such as 1, 3.14, or -10.
+        </li>
+        <li>
+          <b>string:-</b>
+          Represents sequences of characters enclosed in single ('') or double
+          ("") quotes, like 'Hello' or "World".
+        </li>
+        <li>
+          <b>boolean:-</b>
+          Represents a logical value, either true or false.
+        </li>
+        <li>
+          <b>undefined:-</b>
+          Represents a variable that has been declared but has not been assigned
+          a value
+        </li>
+        <li>
+          <b>null:-</b>
+          Represents the intentional absence of any object value.
+        </li>
+      </ul>
+      <p>
+        <b>
+          We make our own Data-Types in JavaScript ; Class is a way to achieve
+          that goal.
+        </b>
+      </p>
+      <p>
+        <b>Stack:-</b><br />
+        The stack is a region of memory that is organized in a Last-In-First-Out
+        (LIFO) manner. It is used for managing function calls and local
+        variables. When a function is called, the function's parameters, return
+        address, and local variables are pushed onto the stack. The top of the
+        stack is always the most recently pushed item, and when a function
+        execution is completed, its corresponding stack frame is popped off the
+        stack. <br />
+        The stack is managed by the compiler or runtime environment, and it
+        provides automatic memory allocation and deallocation. Memory operations
+        on the stack are fast because allocating and freeing memory is simply a
+        matter of adjusting the stack pointer. However, the stack has a limited
+        size, and exceeding this size can result in a stack overflow error.
+      </p>
+    </div>
+    <div>
+      <p>
+        <b>Heap:-</b><br />
+        The heap is a region of memory used for dynamic memory allocation. It is
+        an area of memory where objects and data structures can be allocated and
+        deallocated at runtime. Unlike the stack, memory allocation and
+        deallocation on the heap are not handled automatically by the compiler
+        or runtime environment. Instead, the programmer is responsible for
+        explicitly allocating and freeing memory on the heap.<br />
+        The heap provides a larger memory space compared to the stack but is
+        typically slower in terms of memory operations. Memory allocation on the
+        heap requires explicit calls to allocate memory (e.g., new ), and
+        deallocation must also be explicitly done to free the allocated memory
+        (e.g., delete). <br />
+        The heap allows for dynamic memory allocation, making it suitable for
+        managing large amounts of data, creating data structures dynamically, or
+        allocating memory that persists beyond the scope of a function call.
+        However, improper memory management on the heap can lead to memory leaks
+        or fragmentation issues.
+      </p>
+    </div>
+    <button id="btn">Click Me</button>
+    <script>
+      // new means heap
+
+      class Employee {
+        constructor(id, name, salary) {
+          this.id = id;
+          this.name = name;
+          this.salary = salary;
+        }
+
+        showDetails() {
+          console.log(`
+          Id:- ${this.id}
+          Name:- ${this.name}
+          Salary:- ${this.salary}
+          `);
+        }
+      }
+
+      const e1 = new Employee(101, "Usman", 81000); // Here heap will be accessed through e1.
+
+      let e2 = e1;
+      e2.showDetails();
+
+      let e3 = null; // null is the value of heap with address zero.
+      // There will be an exception soon called null reference exception.
+
+      // Button made an object now after we retrieved it with the help of DOM:-
+      console.dir(btn);
+
+      btn.onclick = function () {
+        btn.style.backgroundColor = "red";
+      };
+
+      // function is made and executed on stack?
+    </script>
+  </body>
+</html>

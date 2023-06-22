@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Objects</title>
+  </head>
+  <body>
+    <script>
+      /*
+        Static Function belongs to the class only.
+        Non-Static or Prototype function belongs to the object.
+        */
+
+      class Employee {
+        constructor(id, name, salary) {
+          this.id = id;
+          this.name = name;
+          this.salary = salary;
+        }
+
+        showDetails() {
+          console.log(`
+              Id:- ${this.id}
+              Name:- ${this.name}
+              Salary:- ${this.salary}
+              `);
+        }
+
+        static totalObjects() {
+          console.log("Hi, I Am Static Function");
+        }
+      }
+
+      let e1 = new Employee(111, "Khan", 32000);
+      e1.showDetails();
+
+      // e1.totalObjects();
+      // This gives an error as Static Function belongs to the class only and not to the object
+      // It is accessed as:-
+
+      Employee.totalObjects();
+
+    </script>
+  </body>
+</html>

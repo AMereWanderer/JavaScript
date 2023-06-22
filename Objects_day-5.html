@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>objects</title>
+    <title>Objects</title>
   </head>
   <body>
     <script>
-       // New Way for Protoype function:-
-       // CLass/ Blueprint.
+      // New Way for Protoype function:-
+      // Class/ Blueprint.
 
-       /* class Employee {
+      /* class Employee {
                Three types of functions are present inside class:-
                1. Constructor function.
                2. Prototype function.
                3. Static function.
        }   */
 
-       /*
+      /*
+       When we use the new keyword with a constructor function, it creates a new object and sets the constructor's prototype as the prototype of the new object. We can also pass arguments to the constructor function to initialize the object's properties. 
+       */
+
+      /*
        const e1 = new Employee( - Here internally Constructor gets called ) ;
+      Here using 'new' means allocate memory on heap according to the constructor function.
 
        Default constructor or zero argument constructor.
        */
 
-       /*
+      /*
        class Employee {
          // The name of the constructor is the same as that of the class
+
          constructor() {
            //  Zero Argument constructor.
+
            this.id = 101;
            this.name = "Waseem";
            this.salary = 30000;
@@ -33,34 +40,41 @@
        }
        */
 
-       class Employee {
+      class Employee {
+        constructor(id, name, salary) {
+          // Parameterised Constructor.
 
-         constructor(id, name, salary) {
-           // Parameterised Constructor.
-
-           this.id = id;
-           this.name = name;
-           this.salary = salary;
+          this.id = id;
+          this.name = name;
+          this.salary = salary;
         }
-            /*
-            Now, we have the showDetails() function which we solved its repeated occurence yesterday
+        /*
+            Now, we have the showDetails() function which we solved its repeated occurence yesterday.
              Here using class the showDetails() function goes directly in the prototype function.
-             Also, the prototype function is called so because it goes directly into the object.
+            
             */
-          
-          showDetails() {
-           console.log(`
+
+        showDetails() {
+          /*
+           The prototype function is called so because it goes directly into the object.
+          */
+          console.log(`
               Id:- ${this.id}
               Name:- ${this.name}
               Salary:- ${this.salary}
               `);
-          }
-        } ;
+        }
+      }
 
-       const e1 = new Employee(111, "Hazim", 45000) ;
-       console.log(e1) ;
+      const e1 = new Employee(111, "Hazim", 45000);
+      console.log(e1);
 
-      e1.showDetails() ;
+      /*Employee.prototype.showDetails();
+
+       To access instance methods defined in a class, we need to create an instance of the class and
+        call the method on that instance. Accessing methods directly from the prototype object
+        without an instance, will not work.
+      */
     </script>
   </body>
 </html>

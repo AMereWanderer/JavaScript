@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Objects</title>
+  </head>
+  <body>
+    <script>
+      // Example to access previous functions without class.
+
+      // Constructor function
+      function Person(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      // Prototype method
+      Person.prototype.greet = function () {
+        console.log(`Hello, my name is ${this.name}.`);
+      };
+
+      // Static function
+      Person.sayHello = function (Person) {
+        console.log(`Hello from ${Person.name}!`);
+      };
+
+      // Creating instances
+      const john = new Person("John", 25);
+      const mary = new Person("Mary", 30);
+
+      // Accessing instance properties
+      console.log(john.name);
+      console.log(mary.age);
+
+      // Accessing prototype method
+      john.greet();
+      mary.greet();
+
+      // Accessing static function with instance as argument
+      Person.sayHello(john);
+      Person.sayHello(mary);
+
+      // Next Example with class :-
+
+      class Vehicle {
+        constructor(make, model) {
+          // Constructor Function
+          this.make = make;
+          this.model = model;
+        }
+
+        static vehicleCount; // Declared a static variable to keep count.
+
+        static getVehicleCount() {
+          // Static Function
+          return Vehicle.vehicleCount;
+        }
+
+        static increaseVehicleCount() {
+          // Static Function
+          Vehicle.vehicleCount++;
+        }
+
+        getInfo() {
+          // Prototype Method
+          return `Make:- ${this.make}, 
+          Model:- ${this.model}`;
+        }
+      }
+
+      Vehicle.vehicleCount = 0; // Initialized Static variable vehicleCount;
+
+      const car1 = new Vehicle("Toyota", "Camry");
+      Vehicle.increaseVehicleCount();
+
+      const car2 = new Vehicle("Honda", "Accord");
+      Vehicle.increaseVehicleCount();
+
+      console.log(car1.getInfo());
+      console.log(car2.getInfo());
+
+      console.log(Vehicle.getVehicleCount());
+    </script>
+  </body>
+</html>

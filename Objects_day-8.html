@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Objects</title>
+  </head>
+
+  <body>
+    <div style="background-color: coral;">
+      <!-- <h2>Garbage Collection:</h2>           // ? -->
+
+      <ol>
+        <li>
+          <b>Allocation:</b> <br />
+          When objects are created in JavaScript, memory is allocated to store
+          them. This memory allocation is typically done on the heap, which is a
+          region of memory dedicated to dynamic memory allocation. <br /><br />
+        </li>
+
+        <li>
+          <b>Marking:</b> <br />
+          JavaScript engines use a technique called "mark-and-sweep" to identify
+          which objects are still reachable and in use by the program. The
+          garbage collector starts from a set of root objects (such as global
+          objects or objects referenced by active execution contexts) and
+          traverses the object graph, marking objects as "reachable" or
+          "unreachable" along the way. <br /><br />
+        </li>
+
+        <li>
+          <b>Sweeping:</b> <br />
+          After marking, the garbage collector sweeps through the heap and
+          reclaims memory occupied by unreachable objects.
+          <i>
+            Unreachable objects are considered garbage because they can no
+            longer be accessed or used by the program.</i
+          >
+          <br /><br />
+        </li>
+
+        <li>
+          <b>Memory Reclamation:</b> <br />
+          Once the garbage collector has identified the unreachable objects, it
+          releases the memory occupied by those objects, making it available for
+          future allocations. The specific technique and timing of memory
+          reclamation may vary across JavaScript engines.
+        </li>
+      </ol>
+    </div>
+    <script>
+      document.getElementsByTagName("body")[0].style.backgroundColor = "green";
+
+      // An example of garbage collection:-
+
+      function createObjects() {
+        let obj1 = {};
+        let obj2 = {};
+
+        obj1.ref = obj2;
+        obj2.ref = obj1;
+
+        // obj1 and obj2 create a circular reference
+
+        return "Objects created";
+      }
+
+      function performOperation() {
+        // Perform some operations here
+        console.log("Operation performed");
+      }
+
+      createObjects();
+      performOperation();
+    </script>
+    <div style="background-color: chartreuse;">
+      <p>
+        In this example, we have two functions: createObjects() and
+        performOperation(). Inside createObjects(), we create two objects obj1
+        and obj2. We then create a circular reference by assigning obj2 to the
+        ref property of obj1 and vice versa. This circular reference forms a
+        memory leak because these objects cannot be garbage collected as long as
+        the reference exists. <br />
+        After creating the objects, we call the performOperation() function,
+        which performs some operations unrelated to the objects. The purpose of
+        this function is to demonstrate that once the createObjects() function
+        finishes executing and returns, the circularly referenced objects are no
+        longer reachable or in use. <br />
+        After performOperation() finishes executing, the objects obj1 and obj2
+        become eligible for garbage collection since there are no longer any
+        references to them. The JavaScript engine's garbage collector will
+        eventually identify and reclaim the memory occupied by these unreachable
+        objects. <br />
+        By intentionally creating a circular reference and then allowing it to
+        become unreachable, we demonstrate how the garbage collector handles
+        memory management by detecting and releasing memory that is no longer
+        needed.
+      </p>
+    </div>
+  </body>
+</html>
